@@ -19,3 +19,33 @@ HDFS has two main layers:
 2.Block Storage has two parts:
 1)Block Management maintains the membership of datanodes in the cluster. It supports block-related operations such as creation, deletion, modification and getting location of the blocks. It also takes care of replica placement and replication.
 2)Physical Storage stores the blocks and provides read/write access to it.
+
+q4. What are the configuration files that are to be edited for sure while installing a hadoop cluster.
+
+The four files that need to be configured explicitly while setting up a single node hadoop cluster are:
+1) HDFS-site.xml
+2) YARN-site.xml
+3) Core-site.xml
+4) xml             
+         
+1) HDFS-site.xml:
+   Some of the important properties are:
+  1) Configure port access
+  2) Manages ssl client authentication
+  3) Controls Network interface
+  4) Changes file permission
+
+2)YARN-site.xml:
+  YARN has ResourceManager settings which effects resource allocation with node manager and application manager.
+  Some of the important properties are:
+  1) WebAppProxy Configuration
+  2) MapReduce Configuration
+  3) NodeManager Configuration
+  4) ResourceManager Configuration
+  5) IPC Configuration
+          
+3) Core-site.xml:
+   Some of the important properties are:
+   1) Configuring the name node address
+   2) Configuring the rack awareness factor
+   3) Selecting the type of security
